@@ -5,11 +5,9 @@ import { ValidationPipe } from 'src/common/pipes/validation.pipe'
 
 @Controller('api/infra/health-check')
 export class HealthCheckController {
-	@Get(':id')
-	@Auth(ERoles.ADMIN, ERoles.USER)
-	async healthCheck(@Param('id', new ValidationPipe()) id: string) {
+	@Get()
+	async healthCheck() {
 		return {
-			id,
 			message: 'OK',
 		}
 	}
