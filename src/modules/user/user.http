@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:3000
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiJhN2I4YzU1Zi05OWFhLTRjZjYtODc0My1lYzkyMmZkMWE2YjIiLCJlbWFpbCI6InJpY2FyZG9AdGVzdGUuY29tIn0sImlhdCI6MTc0ODQwNzA2MX0.g8QXvYZ-N-ODWZ9MeC_86Hp4n5eICYP1Xs9ARPft2Kw
+
+@id = a7b8c55f-99aa-4cf6-8743-ec922fd1a6b2
+
+###
+GET {{baseUrl}}/users/find-by-id/{{id}}
+Authorization: Bearer {{access_token}}
+
+###
+POST {{baseUrl}}/users/create
+Content-Type: application/json
+
+{
+	"email": "ricardo@teste.com",
+	"name": "Teste",
+	"phone": "12345678901",
+	"password": "123456"
+}
+
+###
+POST {{baseUrl}}/users/sign-in
+Content-Type: application/json
+
+{
+	"email": "ricardo@teste.com",
+	"password": "123456"
+}
