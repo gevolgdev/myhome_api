@@ -9,6 +9,11 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { MongooseConfigService } from './common/config/mongoose-config.service'
 import { HealthCheckModule } from './services/infra/health-check/health-check.module'
 import { LoggerMiddleware } from './common/middlewares/logger.middleware'
+import { HomeModule } from './modules/home/home.module'
+import { RoomModule } from './modules/room/room.module'
+import { ChoreModule } from './modules/chore/chore.module'
+import { CollaboratorsModule } from './modules/collaborator/collaborators.module'
+import { UserModule } from './modules/user/user.module'
 
 @Module({
 	imports: [
@@ -20,6 +25,11 @@ import { LoggerMiddleware } from './common/middlewares/logger.middleware'
 			useClass: MongooseConfigService,
 		}),
 		HealthCheckModule,
+		UserModule,
+		HomeModule,
+		RoomModule,
+		ChoreModule,
+		CollaboratorsModule,
 	],
 	controllers: [],
 	providers: [],
